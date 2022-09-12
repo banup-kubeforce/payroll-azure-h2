@@ -9,15 +9,15 @@ import org.springframework.cloud.function.adapter.azure.FunctionInvoker;
 import java.util.List;
 import java.util.Optional;
 
-public class EmployeeSupplierHandler extends FunctionInvoker<Optional<?>, List> {
+public class EmployeeSupplierHandler extends FunctionInvoker<Void, List> {
     @FunctionName("employeeSupplier")
     public HttpResponseMessage execute(
-            @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST},authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<?>> request, ExecutionContext context) {
+            @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST},authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Void> request, ExecutionContext context) {
 
         return request
                 .createResponseBuilder(HttpStatus.OK)
               //  .body(EmployeeInfo.)
-                .body(handleRequest(Optional.empty(), context))
+                .body(handleRequest(null, context))
                 .header("Content-Type", "application/json")
                 .build();
 
