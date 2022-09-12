@@ -10,8 +10,9 @@ public class PayrollAzureApplication {
     public static void main(String[] args) {
         SpringApplication.run(PayrollAzureApplication.class, args);
     }
-    @Bean
-    public EmployeeFunction exampleFunction() {
+
+
+    public EmployeeFunction employeeFunction() {
         return new EmployeeFunction();
     }
 
@@ -21,7 +22,10 @@ public class PayrollAzureApplication {
     }
 
     @Bean
-    public EmployeeSupplier exampleSupplier() {
+    public EmployeeSupplier empSupplier() {
         return new EmployeeSupplier();
     }
+
+
+
 }

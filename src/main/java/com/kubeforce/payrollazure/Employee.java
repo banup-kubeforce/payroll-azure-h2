@@ -16,13 +16,13 @@ public class Employee {
 
         private String name;
 
-        private int employeeid;
+        private String employeeid;
 
         private String email;
 
         private String salary;
 
-    public Employee(String name, int employeeIdentifier, String email, String salary)
+    public Employee(String name, String employeeIdentifier, String email, String salary)
     {
         this.name = name;
         this.employeeid = employeeIdentifier;
@@ -45,12 +45,12 @@ public class Employee {
             this.name = name;
         }
 
-        public int getEmployeeIdentifier ()
+        public String getEmployeeIdentifier ()
         {
             return employeeid;
         }
 
-        public void setCustomerIdentifier (int employeeIdentifier)
+        public void setCustomerIdentifier (String employeeIdentifier)
         {
             this.employeeid = employeeIdentifier;
         }

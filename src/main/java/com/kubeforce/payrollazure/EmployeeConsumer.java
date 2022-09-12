@@ -26,8 +26,8 @@ public class EmployeeConsumer implements Consumer<Map<String,String>> {
     public void accept (Map<String, String> map)
     {
         LOGGER.info("Creating the employee", map);
-        Employee employee = new Employee (map.get("name"), Integer.parseInt(map.get(
-                "employeeIdentifier")), map.get("email"), map.get("salary"));
+        Employee employee = new Employee (map.get("name"), map.get(
+                "employeeIdentifier"), map.get("email"), map.get("salary"));
         EmployeeRepository.save(employee);
     }
 
